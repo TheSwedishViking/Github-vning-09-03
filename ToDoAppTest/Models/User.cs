@@ -4,11 +4,10 @@ using System.Text;
 
 namespace ToDoAppTest.Models
 {
-    public class Task
+    public class User
     {
         public int Id { get; set; }
-        public int UserId { get; set; } 
-        public string Title { get; set; }
-        public bool IsCompleted { get; set; }
+        public string UserName { get; set; }
+        public List<Models.Task> Tasks { get; set; }
     }
 }
