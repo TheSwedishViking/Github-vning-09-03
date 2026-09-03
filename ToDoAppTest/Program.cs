@@ -16,13 +16,7 @@
             while (nextTask == true)
             {
                 Console.WriteLine("What other tasks are there to do? [Task list " + nrTasks + "]");
-                Console.WriteLine("No more tasks? Write:   X");
-                Title = title,
-                IsCompleted = false,
-                Id = id
-            };
-            tasks.Add(task);
-            task.Beep();
+                Console.WriteLine("No more tasks? Write:    X");
 
 
                 string title = Console.ReadLine();
