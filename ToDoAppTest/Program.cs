@@ -5,6 +5,7 @@
         static void Main(string[] args)
         {
             Console.WriteLine("Hello, Oscar!");
+            Console.WriteLine("Today is great!");
         }
     }
 }
