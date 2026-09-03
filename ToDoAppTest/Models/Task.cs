@@ -10,5 +10,10 @@ namespace ToDoAppTest.Models
         public int UserId { get; set; } 
         public string Title { get; set; }
         public bool IsCompleted { get; set; }
+
+        public void Beep()
+        {
+            Console.Beep();
+        }
     }
 }

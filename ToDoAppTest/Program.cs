@@ -20,6 +20,7 @@
                 Id = id
             };
             tasks.Add(task);
+            task.Beep();
 
             foreach(var t in tasks)
             {
