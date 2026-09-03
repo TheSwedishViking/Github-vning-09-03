@@ -4,6 +4,7 @@
     {
         static void Main(string[] args)
         {
+            int deleteMe = 0;
             int nrTasks = 0;
             bool nextTask = true;
             int id = 1;
@@ -16,7 +17,7 @@
             while (nextTask == true)
             {
                 Console.WriteLine("What other tasks are there to do? [Task list " + nrTasks + "]");
-                Console.WriteLine("No more tasks? Write:   X");
+                Console.WriteLine("No more tasks? Write:    X");
 
 
                 string title = Console.ReadLine();
