@@ -4,7 +4,6 @@
     {
         static void Main(string[] args)
         {
-            int deleteMe = 0;
             int nrTasks = 0;
             bool nextTask = true;
             int id = 1;
