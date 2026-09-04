@@ -4,44 +4,12 @@
     {
         static void Main(string[] args)
         {
-            int nrTasks = 1;
-            bool nextTask = true;
-
+            string idNumberPerTask;
             List<Models.Task> tasks = new List<Models.Task>();
             Console.WriteLine("Hello dear user!");
 
+            tasks = ListLogic.ListUserInput(tasks);
 
-
-            while (nextTask == true)
-            {
-                foreach (var task in tasks)
-                {
-                    Console.WriteLine(task.Id + " " + task.Title);
-                }
-
-                Console.WriteLine("What tasks are there to do? [Task list " + nrTasks + "]");
-                Console.WriteLine("No more tasks? Write:    X");
-
-
-                string title = Console.ReadLine();
-                if (title == "X" || title == "x")
-                {
-                    nextTask = false;
-                }
-                else
-                {
-                    Models.Task task = new Models.Task
-                    {
-                        Title = title,
-                        IsCompleted = false,
-                        Id = nrTasks
-                    };
-                    tasks.Add(task);
-                    Console.Clear();
-                    nrTasks++;
-                }
-
-            }
 
 
             foreach (var t in tasks)
@@ -58,6 +26,88 @@
                 Console.WriteLine($"Task {t.Id}: {t.Title} - Completed: {t.IsCompleted}");
             }
             Console.ForegroundColor = ConsoleColor.White;
+
+            bool kundvalBool = true;
+            while (kundvalBool)
+            {
+                Console.Clear();
+
+                foreach (var t in tasks)
+                {
+                    if (t.IsCompleted)
+                    {
+                        Console.ForegroundColor = ConsoleColor.Green;
+                    }
+                    else
+                    {
+                        Console.ForegroundColor = ConsoleColor.DarkCyan;
+                    }
+
+                    Console.WriteLine($"Task {t.Id}: {t.Title} - Completed: {t.IsCompleted}");
+                }
+                Console.ForegroundColor = ConsoleColor.White;
+
+                Console.WriteLine();
+
+
+                Console.WriteLine("Vill du ta bort ett task?  -  T   ");
+                Console.WriteLine("Uppdattera status ?  -     M ");
+                Console.WriteLine("Lägga till fler ToDo's?  -     L ");
+                Console.WriteLine("Avsluta programmet?  -  A ");
+                string kundVal = Console.ReadLine().ToLower();
+                if (kundVal == "t")
+                {
+                    tasks = ListLogic.RemoveTask(tasks);
+
+                }
+                if (kundVal == "m")
+                {
+                    tasks = ListLogic.UpdateList(tasks);
+
+                }
+                if (kundVal == "l")
+                {
+                    tasks = ListLogic.ListUserInput(tasks);
+                }
+                if (kundVal == "a")
+                {
+                    tasks = ListLogic.ListUserInput(tasks);
+
+
+                    kundvalBool = false;
+
+                }
+                else
+                {
+                    Console.WriteLine("felaktig inmatining");
+                }
+
+
+
+                foreach (var t in tasks)
+                {
+                    if (t.IsCompleted)
+                    {
+                        Console.ForegroundColor = ConsoleColor.Green;
+                    }
+                    else
+                    {
+                        Console.ForegroundColor = ConsoleColor.DarkCyan;
+                    }
+
+                    Console.WriteLine($"Task {t.Id}: {t.Title} - Completed: {t.IsCompleted}");
+                }
+                Console.ForegroundColor = ConsoleColor.White;
+            }
+
+
+
+
+
+
+
+
+
 
 
 
