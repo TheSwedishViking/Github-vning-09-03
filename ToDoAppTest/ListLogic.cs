@@ -36,6 +36,7 @@
                         Id = nrTasks
                     };
                     tasks.Add(task);
+                    task.Beep();
                     Console.Clear();
                 }
 
