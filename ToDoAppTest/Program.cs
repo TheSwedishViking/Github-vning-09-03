@@ -6,8 +6,10 @@
         {
             string idNumberPerTask;
             List<Models.Task> tasks = new List<Models.Task>();
-            Console.WriteLine("Hello dear user!");
+            Models.User user = new Models.User();
+            user = Functionality.UserCreation.CreateUser();
 
+            Console.WriteLine($"Hello, {user.UserName}!");
             tasks = ListLogic.ListUserInput(tasks);
 
 
@@ -22,8 +24,7 @@
                 {
                     Console.ForegroundColor = ConsoleColor.DarkCyan;
                 }
-
-                Console.WriteLine($"Task {t.Id}: {t.Title} - Completed: {t.IsCompleted}");
+                Console.WriteLine(ExtensionHelpers.TaskModelExtensions.PrintTask(t));
             }
             Console.ForegroundColor = ConsoleColor.White;
 
@@ -58,7 +59,6 @@
                 if (kundVal == "t")
                 {
                     tasks = ListLogic.RemoveTask(tasks);
-
                 }
                 if (kundVal == "m")
                 {
