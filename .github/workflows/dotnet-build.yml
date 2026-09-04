@@ -4,11 +4,10 @@ on:
   workflow_dispatch:
   push:
     branches:
-      main
-
+      - main
 
 jobs:
- build:
+  build:
     runs-on: ubuntu-latest
 
     steps:
@@ -21,7 +20,7 @@ jobs:
         shell: bash
 
       - name: Show runtime context
-        run: | 
+        run: |
           echo "Runner OS: ${{ runner.os }}"
           echo "Repository: ${{ github.repository }}"
           echo "Workflow: ${{ github.workflow }}"
@@ -44,6 +43,5 @@ jobs:
         run: dotnet build
 
       - name: Run code
-
-     run: dotnet run --project ToDoAppTest/ToDoAppTest.csproj
+        run: dotnet run --project ToDoAppTest/ToDoAppTest.csproj
 
