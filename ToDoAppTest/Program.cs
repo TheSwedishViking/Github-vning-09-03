@@ -4,18 +4,22 @@
     {
         static void Main(string[] args)
         {
-            int nrTasks = 0;
+            int nrTasks = 1;
             bool nextTask = true;
-            int id = 1;
+
             List<Models.Task> tasks = new List<Models.Task>();
             Console.WriteLine("Hello dear user!");
 
 
-            Console.WriteLine("What are the tasks you want to do?");
 
             while (nextTask == true)
             {
-                Console.WriteLine("What other tasks are there to do? [Task list " + nrTasks + "]");
+                foreach (var task in tasks)
+                {
+                    Console.WriteLine(task.Id + " " + task.Title);
+                }
+
+                Console.WriteLine("What tasks are there to do? [Task list " + nrTasks + "]");
                 Console.WriteLine("No more tasks? Write:    X");
 
 
@@ -30,7 +34,7 @@
                     {
                         Title = title,
                         IsCompleted = false,
-                        Id = id
+                        Id = nrTasks
                     };
                     tasks.Add(task);
                     Console.Clear();
