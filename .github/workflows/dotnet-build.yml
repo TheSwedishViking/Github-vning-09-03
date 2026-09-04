@@ -20,7 +20,7 @@ jobs:
         run: echo "This is a reusable echo step/class :)."
         shell: bash
 
-        name: Show runtime context
+      - name: Show runtime context
         run: | 
           echo "Runner OS: ${{ runner.os }}"
           echo "Repository: ${{ github.repository }}"
