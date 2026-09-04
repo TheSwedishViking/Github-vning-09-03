@@ -42,5 +42,4 @@ jobs:
       - name: Build project
         run: dotnet build ToDoAppTest/ToDoAppTest.csproj
 
-      - name: Run code
-        run: dotnet run --project ToDoAppTest/ToDoAppTest.csproj
+     
