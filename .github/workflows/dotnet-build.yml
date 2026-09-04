@@ -10,7 +10,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
- steps:
+    steps:
       - name: 🤖 Start build process
         run: echo "Build process has started..."
 
@@ -21,7 +21,7 @@ jobs:
 
         name: Show runtime context
         run: | 
-           echo "Runner OS: ${{ runner.os }}"
+          echo "Runner OS: ${{ runner.os }}"
           echo "Repository: ${{ github.repository }}"
           echo "Workflow: ${{ github.workflow }}"
           echo "Triggered by: ${{ github.event_name }}"
